@@ -1,5 +1,3 @@
-import gps_and_oc_generator.py
-
 def nutrient_score(value, range):
 
     # 0 to 50 -> Very Low zone

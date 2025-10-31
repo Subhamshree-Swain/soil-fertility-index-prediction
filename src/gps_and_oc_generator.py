@@ -1,4 +1,3 @@
-import load_dataset.py
 import numpy as np
 
 field_size_m = 1000 #in meters
