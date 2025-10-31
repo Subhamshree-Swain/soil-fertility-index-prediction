@@ -28,7 +28,7 @@ def rf_model(data):
 
     importances = model.feature_importances_
     features_importances_dict = { 
-        feat : imp for feat, imp in sorted(zip(features, importances), key=lambda x: x[1], reversed=True)
+        feat: imp for feat, imp in sorted(zip(features, importances), key=lambda x: x[1], reverse=True)
     }
     
     return model, features

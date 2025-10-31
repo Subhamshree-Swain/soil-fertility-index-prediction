@@ -45,7 +45,7 @@ def theoritical_sfi(N, P, K, OC, pH):
 
 
 def sfi_for_row(row):
-    return theoritical_sfi(row["N"], row["P"], row["K"], row["OC"], row["pH"])
+    return theoritical_sfi(row["N"], row["P"], row["K"], row["OC"], row["ph"])
 
 
 
@@ -59,8 +59,8 @@ def sfi_dataset(data):
     sfi_std = round(data["SFI"].std(), 2)
 
     sfi_low_count = len(data[data["SFI"] < 40])
-    sfi_low_mid_count = len(data[data["SFI"] >= 40 & data["SFI"] < 60])
-    sfi_mid_high_count = len(data[data["SFI"] >= 60 & data["SFI"] < 80])
+    sfi_low_mid_count = len(data[(data["SFI"] >= 40) & (data["SFI"] < 60)])
+    sfi_mid_high_count = len(data[(data["SFI"] >= 60) & (data["SFI"] < 80)])
     sfi_high_count = len(data[data["SFI"] >= 80])
 
     sfi_low_percent = (sfi_low_count / len(data)) * 100  
