@@ -15,7 +15,14 @@ def main():
 
     data = sfi_dataset(data)
 
-    model, features = rf_model(data)
+    model, features, r2_train, r2_test, rmse, feat_import = rf_model(data)
+    print("\n-----------Random Forest Model Results---------")
+    print(f"R2 Train: {r2_train:.4f}")
+    print(f"R2 Test: {r2_test:.4f}")
+    print(f"RMSE : {r2_train:.4f}")
+    print("\nFeature Importance:")
+    for feat, imp in feat_import.items():
+        print(f"{feat}: {imp:.4f}")
 
     fertility_map(data, resolution=100)
 

@@ -31,4 +31,4 @@ def rf_model(data):
         feat: imp for feat, imp in sorted(zip(features, importances), key=lambda x: x[1], reverse=True)
     }
     
-    return model, features
+    return model, features, r2_train, r2_test, rmse, features_importances_dict
